@@ -15,7 +15,7 @@
        <span class=" z-10 flex justify-center text-[3.3rem] text-white my-6 font-serif">
             Nature Renew
        </span>
-       <h2 class="text-white mx-auto z-10">Coming Soon.</h2>
+       <h2 class="text-white mx-auto z-10 text-2xl">Coming Soon.</h2>
        <div class="z-10 p-8 shadow-lg w-full max-w-md">
         <h2 class=" inline-block flex justify-center align-center font-semibold text-white mb-6 border-primary-color border-b-2">Keep in touch as Nature Renew Develops!</h2>
         <form class="flex justify-center items-center" action="#" method="POST">
@@ -29,8 +29,9 @@
           </div>
         </form>
         <div class="flex flex-col items-center mt-48 text-white z-30">
-          <h1 class="text-2xl italic animate-pulse">Learn More</h1>
-          <!-- <img src="../../assets/general_svgs/down_arrow.svg" width="50" height="50" alt="down arrow"/> -->
+          @if(isVisible){
+            <h1 class="text-2xl italic animate-pulse" (scroll)="onScroll()">Learn More</h1>
+          }
         </div>
       </div>
     </div>

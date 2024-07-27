@@ -1,1 +1,8 @@
-<p>info-component works!</p>
+@for(infoBlurb of displayInfo; track infoBlurb.title){
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title> {{infoBlurb.title}} </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{infoBlurb.content}}.</p>
+      </mat-expansion-panel>
+}
