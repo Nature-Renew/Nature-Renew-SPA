@@ -1,24 +1,22 @@
 .info-container{
     display: flex;
     flex-direction: column;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     justify-content: space-evenly;
 }
 
 .faq{
     border-radius: 0;
     background-color: #010101;
-    /* height: 11rem; */
+    padding-bottom: 3rem;
 }
 
 .faq_title{
     font-size: 1.3rem;
     font-style: italic;
-    /* margin: 0 auto; */
 }
 
 .faq p{
     font-size: .9rem;
     padding: .5rem;
-    /* font-style: ; */
 }
