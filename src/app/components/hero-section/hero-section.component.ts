@@ -11,7 +11,7 @@ import { InfoComponentComponent } from '../info-component/info-component.compone
  
 export class HeroSectionComponent {
   isVisible = true;
-  onScroll(){
+  onClick(){
     this.isVisible = false;
   }
 
