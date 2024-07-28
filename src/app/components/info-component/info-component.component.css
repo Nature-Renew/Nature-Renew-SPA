@@ -7,8 +7,16 @@
 
 .faq{
     border-radius: 0;
+    border-bottom: 1px solid white;
     background-color: #010101;
     padding-bottom: 3rem;
+    font-family: serif;
+    font-weight: thin;
+}
+
+.faq:last-child{
+    border-bottom: none;
+    /* padding-bottom: .3rem; */
 }
 
 .faq_title{
