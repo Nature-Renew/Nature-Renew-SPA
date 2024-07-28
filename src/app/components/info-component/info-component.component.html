@@ -1,0 +1,10 @@
+<div class="info-container">
+    @for(infoBlurb of displayInfo; track infoBlurb.title){
+        <mat-expansion-panel class="faq">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="faq_title"> {{infoBlurb.title}} </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{infoBlurb.content}}.</p>
+          </mat-expansion-panel>
+    }
+</div>

@@ -1,0 +1,30 @@
+.info-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+.faq{
+    border-radius: 0;
+    border-bottom: 1px solid white;
+    background-color: #010101;
+    padding-bottom: 3rem;
+    font-family: serif;
+    font-weight: thin;
+}
+
+.faq:last-child{
+    border-bottom: none;
+    /* padding-bottom: .3rem; */
+}
+
+.faq_title{
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.faq p{
+    font-size: .9rem;
+    padding: .5rem;
+}
