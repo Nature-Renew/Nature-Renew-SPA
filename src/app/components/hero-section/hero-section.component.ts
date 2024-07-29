@@ -1,17 +1,17 @@
 import { Component, Input, input } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule} from '@angular/forms';
 import { NgStyle } from '@angular/common';
+import { InfoComponentComponent } from '../info-component/info-component.component';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [ReactiveFormsModule,  NgStyle],
+  imports: [ReactiveFormsModule,NgStyle,InfoComponentComponent],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.css'
 })
+ 
 export class HeroSectionComponent {
-
-
   isSubmitted: boolean = false;
 
   newsLetterForm = new FormGroup({
