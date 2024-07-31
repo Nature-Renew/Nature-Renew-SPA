@@ -38,3 +38,13 @@
         letter-spacing: .08rem;
     }
 }
+
+@media only screen and (min-width: 1000px) {
+    .faq_title{
+        font-size: 2rem;
+    }
+    .faq p{
+        font-size: 1.8rem;
+        letter-spacing: .08rem;
+    }
+}
