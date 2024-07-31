@@ -3,6 +3,7 @@
     flex-direction: column;
     min-height: 100vh;
     justify-content: space-evenly;
+    background: black;
 }
 
 .faq{
@@ -16,7 +17,6 @@
 
 .faq:last-child{
     border-bottom: none;
-    /* padding-bottom: .3rem; */
 }
 
 .faq_title{
@@ -27,4 +27,14 @@
 .faq p{
     font-size: .9rem;
     padding: .5rem;
+}
+
+@media only screen and (min-width: 700px) {
+    .faq_title{
+        font-size: 1.56rem;
+    }
+    .faq p {
+        font-size: 1.56rem;
+        letter-spacing: .08rem;
+    }
 }
