@@ -29,6 +29,7 @@
     padding: .5rem;
 }
 
+/*tablet_view*/
 @media only screen and (min-width: 700px) {
     .faq_title{
         font-size: 1.8rem;
@@ -37,7 +38,7 @@
         font-size: 1.56rem;
     }
 }
-
+/*tablet_view_lg*/
 @media only screen and (min-width: 1000px) {
     .faq_title{
         font-size: 2rem;
@@ -45,5 +46,17 @@
     .faq p{
         font-size: 1.8rem;
         letter-spacing: .08rem;
+    }
+}
+
+/*tablet_view_md*/
+@media only screen and (min-width: 800px) {
+    .faq_title{
+        font-size: 2rem;
+        margin: .5rem;
+    }
+    .faq p{
+        font-size: 1.8rem;
+        /* letter-spacing: .08rem; */
     }
 }
