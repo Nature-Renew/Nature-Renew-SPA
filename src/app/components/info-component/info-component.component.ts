@@ -28,7 +28,7 @@ export class InfoComponentComponent {
       content: "Yes, our Sea Moss Gel is 100% vegan and GMO-free, made with wildcrafted sea moss and real fruits, catering to various dietary preferences",
     },
     {
-      title: "What is the difference between Sea Moss Gel and capsules?",
+      title: "Sea Moss Gel vs capsules?",
       content: "Both forms provide the same health benefits, but the gel can be easily added to foods and drinks, while the capsules are convenient for on-the-go consumption"
     },
     {

@@ -19,10 +19,6 @@ export class HeroSectionComponent {
     email : new FormControl('',[Validators.required, Validators.email])
   });
 
-  onReset(){
-    this.isSubmitted = false;
-    this.newsLetterForm.reset();
-  }
 
   onSubmit(){
 
@@ -34,12 +30,11 @@ export class HeroSectionComponent {
     } else {
       console.warn('Form is invalid');
       console.log(this.newsLetterForm.hasError.toString)
-     
     }
   }
 
   get name(){
-    console.log("first name value: " )
+    
     return this.newsLetterForm.get('name');
   }
 

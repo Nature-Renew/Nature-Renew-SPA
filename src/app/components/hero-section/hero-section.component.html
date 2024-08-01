@@ -5,37 +5,29 @@
         <source srcset="assets/images/headerImg/pexels-damodigital-1310044.jpg" type="image/jpg">
         <img src="assets/images/headerImg/pexels-damodigital-1310044.jpg" alt="waves crashing into beach sand">
     </picture>
-    <div class="hero-content flex flex-col">
-       <strong class=" relative justify-center z-10 ml-12 mt-20  ">
-            <span class="block text-5xl font-thin text-white mt-4 ">Made by</span>
-            <span class="inline-block text-5xl font-thin text-white mb-4 border-b-8 border-primary-color ">the Earth</span> 
-            <span class="block text-5xl font-thin text-white mt-4">Made for</span>
-            <span class="inline-block text-5xl font-thin text-white mb-4 border-b-8 border-primary-color">Us</span>
+    <div class="hero-content z-20 flex flex-col ">
+       <strong class=" relative justify-center z-10 ml-9 mt-10 md:mt-20 ">
+            <span class="block text-5xl md:text-[5rem] md:ml-10 xl:ml-40 font-thin text-white mt-4 lg:text-[8rem] xl:text-7xl ">Made by</span>
+            <span class="inline-block text-5xl md:text-[5rem] lg:text-[8rem] xl:text-7xl md:ml-10 xl:ml-40 font-thin text-white mb-4 border-b-8 border-primary-color ">the Earth</span> 
+            <span class="block text-5xl md:text-[5rem] lg:text-[8rem] xl:text-7xl md:ml-10 xl:ml-40 font-thin text-white mt-4">Made for</span>
+            <span class="inline-block text-5xl md:text-[5rem] lg:text-[8rem] xl:text-7xl xl:ml-40 md:ml-10 font-thin text-white mb-4 border-b-8 border-primary-color">Us</span>
        </strong>
-       <span class=" z-10 flex justify-center text-[3.3rem] text-white my-6 font-serif">
+       <span class=" z-10 flex justify-center text-[3.0rem] md:text-[4.5rem] lg:text-9xl xl:text-8xl lg:mt-20 text-white mt-4 font-serif">
             Nature Renew
-       <span class=" z-10 flex justify-center text-[3.6rem] font-semibold text-white my-2">
-            Coming Soon
        </span>
-       <h2 class="text-white mx-auto z-10 text-2xl">Coming Soon.</h2>
-       <div class="z-10 p-8 shadow-lg w-full max-w-md">
-        <h2 class=" inline-block flex justify-center align-center font-semibold text-white mb-6 border-primary-color border-b-2">Keep in touch as Nature Renew Develops!</h2>
-        <form class="flex justify-center items-center" action="#" method="POST">
-          <div>
-            <input placeholder="Enter Your Email" type="email" id="email" name="email" required class="block w-full px-3 py-2 border-2 text-white placeholder:text-white bg-transparent bg-white-to-transparent border-primary-color shadow-sm focus:outline-none text-sm">
-          </div>
-          <div>
-            <button type="submit" class="w-full px-4 py-2 ml-2 bg-primary-color text-white font-semibold shadow-sm">
-              Recieve Updates 
-        <h2 class=" inline-block flex justify-center align-center text-2xl font-semibold text-white  border-primary-color border-b-2">Subscribe to Our Newsletter </h2>
+       <h2 class="text-white mx-auto z-10 text-xl lg:text-5xl  md:text-[2.5rem]">Coming Soon.</h2>
+       <div class="z-10 p-8 md:p-0 block md:w-4/5 md:mx-auto shadow-lg  block">
+        
+      
+        <h2 class="text-xl lg:text-4xl font-semibold text-white text-center border-primary-color border-b-2 md:pt-12">Subscribe to Our Newsletter </h2>
        
-        <form [formGroup]="newsLetterForm" (ngSubmit)="onSubmit()"  class=" p-4 w-full max-w-md" action="#" method="POST">
+        <form [formGroup]="newsLetterForm" (ngSubmit)="onSubmit()"  class=" p-4  " action="#" method="POST">
 
           <div class="mb-3">
             <label for="name" class="block text-sm font-medium text-gray-700"></label>
             
             <input formControlName="name" maxLength="50" placeholder="Name" type="text" id="name"  required 
-                   class="block w-full px-3 py-2 border-2 border-primary-color bg-transparent bg-white-to-transparent placeholder:text-white text-white shadow-sm focus:outline-none text-sm" [ngStyle]="{'border-color': name!.errors && (isSubmitted) ? 'red' : 'primary-color'}">
+                   class="block w-full px-3 py-2 border-2 border-primary-color bg-transparent bg-white-to-transparent lg:h-[64px] lg:placeholder:text-2xl placeholder:text-white text-white shadow-sm focus:outline-none text-sm" [ngStyle]="{'border-color': name!.errors && (isSubmitted) ? 'red' : 'primary-color'}">
                    @if(isSubmitted && name!.invalid){
                       @if(name!.hasError('required')){
                         <span class="text-red-500 text-sm"> Name is Required</span>
@@ -46,7 +38,7 @@
           <div class="mb-3">
             <label for="email" class="block text-sm font-medium text-gray-700"></label>
             <input formControlName="email" placeholder="Email" type="email" name="email" required
-                   class="mt-1 block w-full px-3 py-2 border-2 border-primary-color bg-transparent bg-white-to-transparent placeholder:text-white text-white bg-transparent shadow-sm focus:outline-none text-sm" [ngStyle]="{'border-color': email!.errors && (isSubmitted) ? 'red' : 'primary-color'}">
+                   class="mt-1 block w-full px-3 py-2 border-2 border-primary-color bg-transparent bg-white-to-transparent lg:h-[64px] lg:placeholder:text-2xl placeholder:text-white text-white bg-transparent shadow-sm focus:outline-none text-sm" [ngStyle]="{'border-color': email!.errors && (isSubmitted) ? 'red' : 'primary-color'}">
                    @if(isSubmitted && email!.errors){
                     @if(email!.errors['required']){
                       <span class="text-red-500 text-sm"> Email is Required</span>
@@ -58,11 +50,11 @@
             </div>
 
           
-            <button type="submit" class="w-full px-4 py-2 bg-primary-color text-white font-semibold shadow-sm hover:bg-primary-color-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-color-600">
+            <button type="submit" class="w-full px-4 py-2 bg-primary-color lg:h-[64px] lg:text-3xl text-white font-semibold shadow-sm hover:bg-primary-color-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-color-600">
               Subscribe
             </button>
           
         </form>
+        <span class=" block text-white font-bold flex justify-center items-center mt-auto mb-8 h-auto animate-pulse xl:hidden"> Learn More</span>
       </div>
     </div>
-</header>
