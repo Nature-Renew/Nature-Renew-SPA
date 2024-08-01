@@ -17,8 +17,10 @@ module.exports = {
         'mobile_view': '390px', 
         'tablet_view': '700px', 
         'tablet_view_md': '800px',
-        'tablet_view_lg': '900px', 
-        'desktop_view': '1200px', 
+        'tablet_view_lg': '900px',
+        'desktop_view_sm': '1000px',
+        'desktop_view_md': '1200px', 
+        'desktop_view_lg': '1300px', // regular monitors and up
       }
     },
   },
