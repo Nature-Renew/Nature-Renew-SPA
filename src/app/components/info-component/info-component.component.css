@@ -31,11 +31,10 @@
 
 @media only screen and (min-width: 700px) {
     .faq_title{
-        font-size: 1.56rem;
+        font-size: 1.8rem;
     }
     .faq p {
         font-size: 1.56rem;
-        letter-spacing: .08rem;
     }
 }
 

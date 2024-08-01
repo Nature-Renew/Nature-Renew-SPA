@@ -16,7 +16,8 @@ module.exports = {
         'mobile_view_sm': '320px', // min width of 320px
         'mobile_view': '390px', // min width of 435px
         'tablet_view': '700px', // min width of 700px
-        'large_tablet_view': '1000px', // min width of 1000px
+        'tablet_view_lg': '900px', // min width of 1000px
+        'desktop_view': '1200px', // min width of 1200px
       }
     },
   },
