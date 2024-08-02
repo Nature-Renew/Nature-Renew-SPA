@@ -11,3 +11,7 @@
   app-info-component {
     flex: 1;
   }
+app-hero-component{
+    margin-bottom: 1rem;
+    z-index: 25;
+}
