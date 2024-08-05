@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary-color': '#2DC0C9', // Custom teal color
+        'primary-color': '#90EE90', // Custom teal color
         'primary-yellow': '#DAB634', // taken from figma file
         'primary-color-600': '#218c91', // Custom teal color
       },
