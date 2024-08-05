@@ -70,7 +70,8 @@
               "buildTarget": "Naturenew-SP:build:production"
             },
             "development": {
-              "buildTarget": "Naturenew-SP:build:development"
+              "buildTarget": "Naturenew-SP:build:development",
+              "liveReload": true
             }
           },
           "defaultConfiguration": "development"
