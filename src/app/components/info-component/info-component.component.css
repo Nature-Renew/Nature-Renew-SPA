@@ -3,14 +3,12 @@
     flex-direction: column;
     min-height: 100vh;
     margin: 1rem;
-
     justify-content: space-evenly;
     z-index: 0;
 }
 
 .faq{
     border-radius: 0;
-   /* border-bottom: 1px solid white;*/
     background-color: #010101;
     background-image: linear-gradient(45deg, rgb(0, 0, 0), rgb(150, 150, 150,0.2));
     border-radius: 1rem;
@@ -21,23 +19,27 @@
 }
 
 mat-expansion-panel{
-    
     margin: 0 !important;
 }
 
 .faq:last-child{
     border-bottom: none;
     align-items: center;
-    /* padding-bottom: .3rem; */
 }
 
 .faq_title{
     font-size: 1.3rem;
-    font-style: italic;
     padding-left: 1rem;
 }
 
 .faq p{
     font-size: .9rem;
     padding: .5rem;
+}
+
+@media only screen and (min-width: 1280px){
+    .faq p{
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
 }
