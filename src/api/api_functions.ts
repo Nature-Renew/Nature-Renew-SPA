@@ -20,7 +20,7 @@ export async function addNewSubscriber(userName: string, userEmail: string): Pro
     const response = await fetch(`${BASE_URL}/newSubscriber`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json', // Specify the content type as JSON
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         userName,   
@@ -33,10 +33,10 @@ export async function addNewSubscriber(userName: string, userEmail: string): Pro
       message: "Successfully added subscriber",
     });
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error("Failed to add subscriber:", error.response?.data || error.message);
-    } else {
-      console.error("An unexpected error occurred:", error);
-    }
+    // if (axios.isAxiosError(error)) {
+    //   console.error("Failed to add subscriber:", error.response?.data || error.message);
+    // } else {
+    //   console.error("An unexpected error occurred:", error);
+    // }
   }
 }
