@@ -1,0 +1,7 @@
+{
+    "/newSubscriber": {
+      "target": "http://localhost:8000/newSubscriber",
+      "secure": false
+    }
+  }
+  

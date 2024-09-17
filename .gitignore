@@ -22,7 +22,7 @@ yarn-error.log
 
 # Environment Variables
 .env
-
+src/environments/*
 
 # Visual Studio Code
 .vscode/*
