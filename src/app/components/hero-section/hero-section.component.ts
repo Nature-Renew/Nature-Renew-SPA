@@ -1,58 +1,58 @@
-import { Component, Input, input } from '@angular/core';
-import { FormGroup, FormControl, Validators, ReactiveFormsModule} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { NgStyle } from '@angular/common';
 import { InfoComponentComponent } from '../info-component/info-component.component';
+import {HttpClient} from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [ReactiveFormsModule,NgStyle,InfoComponentComponent],
+  imports: [ReactiveFormsModule, NgStyle, InfoComponentComponent],
   templateUrl: './hero-section.component.html',
-  styleUrl: './hero-section.component.css'
+  styleUrls: ['./hero-section.component.css'],
 })
- 
 export class HeroSectionComponent {
-  isSubmitted: boolean = false;
 
+  constructor(private http: HttpClient){}
+
+  isSubmitted: boolean = false;
   newsLetterForm = new FormGroup({
-    name : new FormControl('',[Validators.required, Validators.maxLength(50)]),
-    email : new FormControl('',[Validators.required, Validators.email])
+    name: new FormControl<string>('', [Validators.required, Validators.maxLength(50)]),
+    email: new FormControl<string>('', [Validators.required, Validators.email]),
   });
 
-
-  onSubmit(){
-
+  async onSubmit() {
     this.isSubmitted = true;
-
     if (this.newsLetterForm.valid) {
       console.log(this.newsLetterForm.value);
-      
+
+      const nameValue = this.name?.value ?? '';
+      const email = this.email?.value ?? '';
+
+      try {
+        this.http.post<any>('http://localhost:8000/newSubscriber', 
+        { userName: nameValue, Email: email }, 
+        { headers: { 'Content-Type': 'application/json' } }
+     ).subscribe(data => {
+        console.log(data);
+     });
+     
+      } catch (error) {
+        console.error('Error adding subscriber:', error);
+      }
     } else {
       console.warn('Form is invalid');
-      console.log(this.newsLetterForm.hasError.toString)
+      console.log('Form errors:', this.newsLetterForm.errors);
     }
   }
 
-  get name(){
-    
+  get name() {
     return this.newsLetterForm.get('name');
   }
 
-
-  get email(){
+  get email() {
     return this.newsLetterForm.get('email');
   }
-
-  
-
-
-  constructor(){
-
-  }
-  
 }
-  
-
-
-
-
