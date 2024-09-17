@@ -32,6 +32,7 @@ export class HeroSectionComponent {
       const email = this.email?.value ?? '';
 
       try {
+        //@ts-ignore
         this.http.post<any>(environment.LOCAL_BASE_URL + 'newSubscriber', 
         { Name: name, Email: email }, 
         { headers: { 'Content-Type': 'application/json' } }

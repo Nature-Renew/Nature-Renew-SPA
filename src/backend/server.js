@@ -2,18 +2,31 @@
 /**
  * Server for CRUD operations with DynamoDB
  */
-import express, { json } from 'express';
-import { config, DynamoDB } from 'aws-sdk';
-import { config as _config } from 'dotenv';
-import cors from 'cors';
-import { REGION, 
+const express = require('express');
+const { json } = require('express');
+const AWS = require('aws-sdk');
+const cors = require('cors');
+const dotenv = require('dotenv');
+
+// Importing environment variables from a TypeScript environment file
+const { 
+  REGION, 
   AWS_ACCESS_KEY_ID, 
   AWS_SECRET_ACCESS_KEY, 
   TABLE_NAME, 
   PORT, 
-  LOCAL_BASE_URL } from './../environments/environment.ts';
+  LOCAL_BASE_URL 
+} = require('./../environments/environment.ts');
 
-_config();
+// Configure dotenv to load environment variables
+dotenv.config();
+
+// AWS SDK configuration
+AWS.config.update({
+  region: REGION,
+  accessKeyId: AWS_ACCESS_KEY_ID,
+  secretAccessKey: AWS_SECRET_ACCESS_KEY,
+});
 
 const app = express();
 app.use(json());
