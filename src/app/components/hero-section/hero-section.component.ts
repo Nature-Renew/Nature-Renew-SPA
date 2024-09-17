@@ -3,8 +3,7 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 import { NgStyle } from '@angular/common';
 import { InfoComponentComponent } from '../info-component/info-component.component';
 import {HttpClient} from '@angular/common/http';
-
-
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-hero-section',
@@ -13,6 +12,7 @@ import {HttpClient} from '@angular/common/http';
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.css'],
 })
+
 export class HeroSectionComponent {
 
   constructor(private http: HttpClient){}
@@ -28,14 +28,15 @@ export class HeroSectionComponent {
     if (this.newsLetterForm.valid) {
       console.log(this.newsLetterForm.value);
 
-      const nameValue = this.name?.value ?? '';
+      const name = this.name?.value ?? '';
       const email = this.email?.value ?? '';
 
       try {
-        this.http.post<any>('http://localhost:8000/newSubscriber', 
-        { userName: nameValue, Email: email }, 
+        this.http.post<any>(environment.LOCAL_BASE_URL + 'newSubscriber', 
+        { Name: name, Email: email }, 
         { headers: { 'Content-Type': 'application/json' } }
      ).subscribe(data => {
+        console.log('Subscriber added successfully');
         console.log(data);
      });
      

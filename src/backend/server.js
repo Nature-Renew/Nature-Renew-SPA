@@ -2,36 +2,36 @@
 /**
  * Server for CRUD operations with DynamoDB
  */
-const express = require('express');
-const AWS = require('aws-sdk');
-const dotenv = require('dotenv');
-const cors = require('cors'); // Import the CORS package
-const environment = require('./../environments/environment.ts');
+import express, { json } from 'express';
+import { config, DynamoDB } from 'aws-sdk';
+import { config as _config } from 'dotenv';
+import cors from 'cors';
+import { REGION, 
+  AWS_ACCESS_KEY_ID, 
+  AWS_SECRET_ACCESS_KEY, 
+  TABLE_NAME, 
+  PORT, 
+  LOCAL_BASE_URL } from './../environments/environment.ts';
 
-// Load environment variables from .env file
-dotenv.config();
+_config();
 
 const app = express();
-app.use(express.json());
+app.use(json());
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: LOCAL_BASE_URL,
   methods: 'GET,POST',
 }));
 
 
-AWS.config.update({
-  region: environment.REGION, 
-  accessKeyId: environment.AWS_ACCESS_KEY_ID,
-  secretAccessKey: environment.AWS_SECRET_ACCESS_KEY
+config.update({
+  region: REGION, 
+  accessKeyId: AWS_ACCESS_KEY_ID,
+  secretAccessKey: AWS_SECRET_ACCESS_KEY
 });
 
 
-const dynamoDB = new AWS.DynamoDB.DocumentClient();
-const TABLE_NAME = environment.TABLE_NAME
-
-app.get("/newSubscriber", async (req, res) => {
-  return res.status(200).json({Message: "Works"});
-})
+const dynamoDB = new DynamoDB.DocumentClient();
+const TABLE_NAME = TABLE_NAME
 
 app.post(`/newSubscriber`, async (req, res) => {
   const { userName, Email } = req.body;
@@ -58,8 +58,7 @@ app.post(`/newSubscriber`, async (req, res) => {
   
 });
 
-// Start the server
-const port = environment.PORT;
+const port = PORT;
 app.listen(port,'0.0.0.0', () => {
   console.log(`Server is running on port: ` + port);
 });
