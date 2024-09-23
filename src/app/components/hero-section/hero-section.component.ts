@@ -36,7 +36,6 @@ export class HeroSectionComponent {
         { headers: { 'Content-Type': 'application/json' } }
      ).subscribe(data => {
         console.log('Subscriber added successfully');
-        console.log(data);
      });
      
       } catch (error) {
@@ -46,6 +45,7 @@ export class HeroSectionComponent {
       console.warn('Form is invalid');
       console.log('Form errors:', this.newsLetterForm.errors);
     }
+    this.onReset();
   }
 
   get name() {
@@ -54,5 +54,11 @@ export class HeroSectionComponent {
 
   get email() {
     return this.newsLetterForm.get('email');
+  }
+
+  // need to clear the form after submission
+  onReset() {
+    this.isSubmitted = false;
+    this.newsLetterForm.reset();
   }
 }
