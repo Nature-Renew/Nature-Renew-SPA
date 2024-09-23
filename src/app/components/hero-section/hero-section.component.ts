@@ -26,13 +26,11 @@ export class HeroSectionComponent {
   async onSubmit() {
     this.isSubmitted = true;
     if (this.newsLetterForm.valid) {
-      console.log(this.newsLetterForm.value);
-
       const name = this.name?.value ?? '';
       const email = this.email?.value ?? '';
 
       try {
-        //@ts-ignore`P
+        //@ts-ignore
         this.http.post<any>(environment.LOCAL_BASE_URL + 'newSubscriber', 
         { Name: name, Email: email }, 
         { headers: { 'Content-Type': 'application/json' } }
