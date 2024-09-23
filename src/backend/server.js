@@ -36,15 +36,8 @@ app.use(cors({
 }));
 
 
-config.update({
-  region: REGION, 
-  accessKeyId: AWS_ACCESS_KEY_ID,
-  secretAccessKey: AWS_SECRET_ACCESS_KEY
-});
-
-
 const dynamoDB = new DynamoDB.DocumentClient();
-const TABLE_NAME = TABLE_NAME
+
 
 app.post(`/newSubscriber`, async (req, res) => {
   const { userName, Email } = req.body;
