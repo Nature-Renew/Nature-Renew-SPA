@@ -29,7 +29,7 @@
             <label for="name" class="block text-sm font-medium text-gray-700"></label>
             
             <input formControlName="name" maxLength="50" placeholder="Name" type="text" id="name"  required 
-                   class="block w-full px-3 py-2 border-2 border-primary-color bg-transparent bg-white-to-transparent lg:h-[64px] lg:placeholder:text-2xl placeholder:text-white text-white shadow-sm focus:outline-none text-sm" [ngStyle]="{'border-color': name!.errors && (isSubmitted) ? 'red' : 'primary-color'}">
+                   class="block w-full px-3 py-2 border-2 border-primary-color bg-transparent bg-white-to-transparent lg:h-[64px] lg:placeholder:text-2xl placeholder:text-white text-white shadow-sm focus:outline-none text-2xl" [ngStyle]="{'border-color': name!.errors && (isSubmitted) ? 'red' : 'primary-color'}">
                    @if(isSubmitted && name!.invalid){
                       @if(name!.hasError('required')){
                         <span class="text-red-500 text-sm"> Name is Required</span>
@@ -41,7 +41,7 @@
           <div class="mb-3">
             <label for="email" class="block text-sm font-medium text-gray-700"></label>
             <input formControlName="email" placeholder="Email" type="email" name="email" required
-                   class="mt-1 block w-full px-3 py-2 border-2 border-primary-color bg-transparent bg-white-to-transparent lg:h-[64px] lg:placeholder:text-2xl placeholder:text-white text-white bg-transparent shadow-sm focus:outline-none text-sm" [ngStyle]="{'border-color': email!.errors && (isSubmitted) ? 'red' : 'primary-color'}">
+                   class="mt-1 block w-full px-3 py-2 border-2 border-primary-color bg-transparent bg-white-to-transparent lg:h-[64px] lg:placeholder:text-2xl placeholder:text-white text-white bg-transparent shadow-sm focus:outline-none text-2xl" [ngStyle]="{'border-color': email!.errors && (isSubmitted) ? 'red' : 'primary-color'}">
                    @if(isSubmitted && email!.errors){
                     @if(email!.errors['required']){
                       <span class="text-red-500 text-sm"> Email is Required</span>
