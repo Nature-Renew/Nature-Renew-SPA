@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 import { NgStyle } from '@angular/common';
 import { InfoComponentComponent } from '../info-component/info-component.component';
 import {HttpClient} from '@angular/common/http';
-const {environment} = require('../../../environments/environment');
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-hero-section',
