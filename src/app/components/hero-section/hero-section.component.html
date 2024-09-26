@@ -56,6 +56,9 @@
                     @if(isSubmitted && showSuccessState){
                       <span class="text-green-500 text-sm"> Successfully Submitted Information</span>
                     }
+                    @if(isSubmitted && showNetworkError){
+                      <span class="text-red-500 text-sm"> Network Error - Try again later.</span>
+                    }
           </div>
 
             <button type="submit" 

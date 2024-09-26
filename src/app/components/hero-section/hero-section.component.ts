@@ -4,7 +4,8 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 import { NgStyle } from '@angular/common';
 import { InfoComponentComponent } from '../info-component/info-component.component';
 import {HttpClient} from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+//@ts-ignore
+import environment from '../../../environments/environment';
 
 @Component({
   selector: 'app-hero-section',
@@ -20,6 +21,7 @@ export class HeroSectionComponent {
 
   isSubmitted: boolean = false;
   showSuccessState: boolean = false;
+  showNetworkError: boolean = false;
   newsLetterForm = new FormGroup({
     name: new FormControl<string>('', [Validators.required, Validators.maxLength(50), Validators.minLength(2)]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
@@ -28,7 +30,6 @@ export class HeroSectionComponent {
   async onSubmit() {
     this.isSubmitted = true;
     if (this.newsLetterForm.valid) {
-      this.showSuccessState = true;
       const name = this.name?.value ?? '';
       const email = this.email?.value ?? '';
       try {
@@ -37,13 +38,15 @@ export class HeroSectionComponent {
         { Name: name, Email: email }, 
         { headers: { 'Content-Type': 'application/json' } }
      ).subscribe(data => {
-        console.log('Subscriber added successfully', data);
+      // only show success if we successfully reach the backend
+      this.showSuccessState = true;
+      console.log(data);
      }); } catch (error) {
-        console.error('Error adding subscriber:', error);
+        this.showNetworkError = true;
       }
       setTimeout(() => {
         this.onReset();
-      }, 1000)
+      }, 2500)
     }
   }
 
@@ -59,6 +62,7 @@ export class HeroSectionComponent {
   onReset() {
     this.isSubmitted = false;
     this.showSuccessState = false;
+    this.showNetworkError = false;
     this.newsLetterForm.reset();
   }
 }
