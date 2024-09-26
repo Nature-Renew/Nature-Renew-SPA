@@ -2,48 +2,45 @@
 /**
  * Server for CRUD operations with DynamoDB
  */
-import express, { json } from 'express';
-import { config, DynamoDB } from 'aws-sdk';
-import { config as _config } from 'dotenv';
+import express from 'express';
+import { json } from 'express';
+import AWS from 'aws-sdk';
 import cors from 'cors';
-import { REGION, 
-  AWS_ACCESS_KEY_ID, 
-  AWS_SECRET_ACCESS_KEY, 
-  TABLE_NAME, 
-  PORT, 
-  LOCAL_BASE_URL } from './../environments/environment.ts';
+import { config as dotenvConfig } from 'dotenv';
 
-_config();
+import environmemnt from '../environments/environment.js';
+
+dotenvConfig();
+
+AWS.config.update({
+  region: environmemnt.REGION,
+  accessKeyId: environmemnt.AWS_ACCESS_KEY_ID,
+  secretAccessKey: environmemnt.AWS_SECRET_ACCESS_KEY,
+});
 
 const app = express();
 app.use(json());
 app.use(cors({
-  origin: LOCAL_BASE_URL,
+  origin: environmemnt.ALLOWED_DEV_FRONTEND,
   methods: 'GET,POST',
+  allowedHeaders: "*",
 }));
 
 
-config.update({
-  region: REGION, 
-  accessKeyId: AWS_ACCESS_KEY_ID,
-  secretAccessKey: AWS_SECRET_ACCESS_KEY
-});
+const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
-
-const dynamoDB = new DynamoDB.DocumentClient();
-const TABLE_NAME = TABLE_NAME
 
 app.post(`/newSubscriber`, async (req, res) => {
-  const { userName, Email } = req.body;
+  const { Name, Email } = req.body;
 
-  if (!userName || !Email) {
+  if (!Name || !Email) {
     return res.status(400).json({ error: 'Name and Email are required' });
   }
 
   const params = {
-    TableName: TABLE_NAME,
+    TableName: environmemnt.TABLE_NAME,
     Item: {
-      userName,
+      Name,
       Email,
     },
   };
@@ -58,7 +55,7 @@ app.post(`/newSubscriber`, async (req, res) => {
   
 });
 
-const port = PORT;
-app.listen(port,'0.0.0.0', () => {
-  console.log(`Server is running on port: ` + port);
+const currentPort = environmemnt.PORT
+app.listen(currentPort,'0.0.0.0', () => {
+  console.log(`Server is running on port ${currentPort}.`);
 });
