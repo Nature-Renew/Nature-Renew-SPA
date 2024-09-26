@@ -19,32 +19,31 @@ export class HeroSectionComponent {
   constructor(private http: HttpClient){}
 
   isSubmitted: boolean = false;
+  showSuccessState: boolean = false;
   newsLetterForm = new FormGroup({
     name: new FormControl<string>('', [Validators.required, Validators.maxLength(50), Validators.minLength(2)]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
   });
-  // states used for error and success handling
-  deactivateSubmission: boolean = true;
-  showSuccessState: boolean = false;
-
+  
   async onSubmit() {
     this.isSubmitted = true;
     if (this.newsLetterForm.valid) {
+      this.showSuccessState = true;
       const name = this.name?.value ?? '';
       const email = this.email?.value ?? '';
-
       try {
         //@ts-ignore
         this.http.post<any>(environment.LOCAL_BASE_URL + 'newSubscriber', 
         { Name: name, Email: email }, 
         { headers: { 'Content-Type': 'application/json' } }
-        // subscribe to looking at this observable
      ).subscribe(data => {
         console.log('Subscriber added successfully', data);
      }); } catch (error) {
         console.error('Error adding subscriber:', error);
       }
-      this.onReset();
+      setTimeout(() => {
+        this.onReset();
+      }, 1000)
     }
   }
 
@@ -59,6 +58,7 @@ export class HeroSectionComponent {
   // need to clear the form after submission
   onReset() {
     this.isSubmitted = false;
+    this.showSuccessState = false;
     this.newsLetterForm.reset();
   }
 }
