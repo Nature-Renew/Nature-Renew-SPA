@@ -32,22 +32,23 @@ export class HeroSectionComponent {
     if (this.newsLetterForm.valid) {
       const name = this.name?.value ?? '';
       const email = this.email?.value ?? '';
-      try {
-        //@ts-ignore
-        // this.http.post<any>(environment.LOCAL_BASE_URL + 'newSubscriber', 
-        this.http.post<any>(environment.LAMBDA_ACCESS_LINK, 
-        { Name: name, Email: email }, 
-        { headers: { 'Content-Type': 'application/json' } }
-     ).subscribe(data => {
-      // only show success if we successfully reach the backend
-      this.showSuccessState = true;
-      console.log(data);
-     }); } catch (error) {
+
+    //@ts-ignore
+    this.http.post<any>(environment.LAMBDA_ACCESS_LINK, 
+    { Name: name, Email: email }, 
+    { headers: { 'Content-Type': 'application/json'} }).subscribe({
+      next: (_data) => {
+        this.showSuccessState = true;
+      },
+      error: (_error) => {
         this.showNetworkError = true;
-      }
-      setTimeout(() => {
-        this.onReset();
-      }, 2500)
+      },
+      complete: () => {
+        setTimeout(() => {
+          this.onReset();
+        }, 5000);
+      },
+    });
     }
   }
 
