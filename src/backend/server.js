@@ -21,7 +21,7 @@ AWS.config.update({
 const app = express();
 app.use(json());
 app.use(cors({
-  origin: environmemnt.ALLOWED_DEV_FRONTEND,
+  origin: environmemnt.AMPLIFY_FRONTEND,
   methods: 'GET,POST',
   allowedHeaders: "*",
 }));
