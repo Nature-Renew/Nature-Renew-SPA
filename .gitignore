@@ -22,8 +22,9 @@ yarn-error.log
 
 # Environment Variables
 .env
+# we can push environment.prod.js, nothing sensitive there
 src/environments/environment.js
-
+src/backend/*
 
 # Visual Studio Code
 .vscode/*
