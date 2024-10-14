@@ -34,9 +34,9 @@ export class HeroSectionComponent {
       const email = this.email?.value ?? '';
 
     //@ts-ignore
-    this.http.post<any>(environment.LAMBDA_ACCESS_LINK, 
+    this.http.post<any>(environment.API_GATEWAY_ENDPOINT, 
     { Name: name, Email: email }, 
-    { headers: { 'Content-Type': 'application/json'} }).subscribe({
+    { headers: { 'Content-Type': 'application/json',}}).subscribe({
       next: (_data) => {
         this.showSuccessState = true;
       },
