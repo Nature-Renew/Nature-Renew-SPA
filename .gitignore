@@ -22,7 +22,10 @@ yarn-error.log
 
 # Environment Variables
 .env
-src/environments/*
+src/environments/environment.js
+
+# adding server files to .gitignore - only using AWS now
+src/backend/*
 
 # Visual Studio Code
 .vscode/*
