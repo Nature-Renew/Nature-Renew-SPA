@@ -26,7 +26,7 @@
   "include": [
     "src/**/*.ts",
     "src/environments/environment.ts"
-  ],
+, "src/polyfills.js"  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
