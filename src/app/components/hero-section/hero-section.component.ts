@@ -5,7 +5,7 @@ import { NgStyle } from '@angular/common';
 import { InfoComponentComponent } from '../info-component/info-component.component';
 import {HttpClient} from '@angular/common/http';
 //@ts-ignore
-import environment from '../../../environments/environment.prod.js';
+import environment from '../../../environments/environment.prod.ts';
 
 @Component({
   selector: 'app-hero-section',
