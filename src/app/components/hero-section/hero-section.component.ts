@@ -36,7 +36,12 @@ export class HeroSectionComponent {
     //@ts-ignore
     this.http.post<any>(environment.API_GATEWAY_ENDPOINT, 
     { Name: name, Email: email }, 
-    { headers: { 'Content-Type': 'application/json',}}).subscribe({
+    { headers: {
+      'Access-Control-Allow-Origin': "https://naturenew.info", 
+      'Access-Control-Allow-Methods' : "*",
+      'Access-Control-Allow-Headers': "*",
+      'Content-Type': 'application/json',
+    }}).subscribe({
       next: (_data) => {
         this.showSuccessState = true;
       },
