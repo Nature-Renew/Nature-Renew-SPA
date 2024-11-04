@@ -38,8 +38,6 @@ export class HeroSectionComponent {
     { Name: name, Email: email }, 
     { headers: {
       'Access-Control-Allow-Origin': "https://naturenew.info", 
-      'Access-Control-Allow-Methods' : "*",
-      'Access-Control-Allow-Headers': "*",
       'Content-Type': 'application/json',
     }}).subscribe({
       next: (_data) => {
