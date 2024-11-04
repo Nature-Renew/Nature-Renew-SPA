@@ -33,25 +33,24 @@ export class HeroSectionComponent {
       const name = this.name?.value ?? '';
       const email = this.email?.value ?? '';
 
-    //@ts-ignore
-    this.http.post<any>(environment.API_GATEWAY_ENDPOINT, 
-    { Name: name, Email: email }, 
-    { headers: {
-      'Access-Control-Allow-Origin': "https://naturenew.info", 
-      'Content-Type': 'application/json',
-    }}).subscribe({
-      next: (_data) => {
-        this.showSuccessState = true;
-      },
-      error: (_error) => {
-        this.showNetworkError = true;
-      },
-      complete: () => {
-        setTimeout(() => {
-          this.onReset();
-        }, 5000);
-      },
-    });
+      //@ts-ignore
+      this.http.post<any>(environment.API_GATEWAY_ENDPOINT, 
+      { Name: name, Email: email }, 
+      { headers: {
+        'Content-Type': 'application/json',
+      }}).subscribe({
+        next: (_data) => {
+          this.showSuccessState = true;
+        },
+        error: (_error) => {
+          this.showNetworkError = true;
+        },
+        complete: () => {
+          setTimeout(() => {
+            this.onReset();
+          }, 5000);
+        },
+      });
     }
   }
 
