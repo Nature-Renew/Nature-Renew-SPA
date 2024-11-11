@@ -1,5 +1,17 @@
 .footer-block{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white
+}
+
+.footer-block p{
+    font-size: 1.4rem;
+}
+
+.link-block{
+    display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, black, #208F96);
@@ -15,8 +27,8 @@
 
 
 .footer_btns{
-    width: 3rem;
-    height: 3rem;
+    width: 3.3rem;
+    height: 3.3rem;
     background-color: inherit;
     cursor: pointer;
 }

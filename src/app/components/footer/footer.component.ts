@@ -8,10 +8,8 @@ import { Component} from '@angular/core';
   styleUrl: './footer.component.css'
 })
 
-export class FooterComponent {
-  twitterLink = ""
-  instagramLink = ""
-  footerOnClick(link: string){
-    window.open(link)
+export class FooterComponent { 
+  footerOnClick(){
+    window.open("https://www.instagram.com/nature_renew/")
   }
 }
