@@ -6,6 +6,7 @@ import { InfoComponentComponent } from '../info-component/info-component.compone
 import {HttpClient} from '@angular/common/http';
 //@ts-ignore
 import environment from '../../../environments/environment.prod.ts';
+// import { API } from 'aws-amplify';
 
 @Component({
   selector: 'app-hero-section',

@@ -1,0 +1,22 @@
+.footer-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, black, #208F96);
+    width: 100%;
+    height: 20vh;
+    gap: 6rem;
+}
+
+.svg_icon_styling{
+    height: 3rem;
+    width: 3rem;
+}
+
+
+.footer_btns{
+    width: 3rem;
+    height: 3rem;
+    background-color: inherit;
+    cursor: pointer;
+}
