@@ -1,0 +1,28 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-naturenewsp-dev-906bb-authRole",
+      "UnauthRoleArn": "arn:aws:iam::444277859488:role/amplify-naturenewsp-dev-906bb-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::444277859488:role/amplify-naturenewsp-dev-906bb-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-naturenewsp-dev-906bb-deployment",
+      "UnauthRoleName": "amplify-naturenewsp-dev-906bb-unauthRole",
+      "StackName": "amplify-naturenewsp-dev-906bb",
+      "StackId": "arn:aws:cloudformation:us-east-1:444277859488:stack/amplify-naturenewsp-dev-906bb/5c392810-9e1b-11ef-b9a4-0e6883d3918d",
+      "AmplifyAppId": "d62fjteoags9l"
+    }
+  },
+  "naturenew": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-naturenewsp-naturenew-ddbc8-authRole",
+      "UnauthRoleArn": "arn:aws:iam::444277859488:role/amplify-naturenewsp-naturenew-ddbc8-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::444277859488:role/amplify-naturenewsp-naturenew-ddbc8-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-naturenewsp-naturenew-ddbc8-deployment",
+      "UnauthRoleName": "amplify-naturenewsp-naturenew-ddbc8-unauthRole",
+      "StackName": "amplify-naturenewsp-naturenew-ddbc8",
+      "StackId": "arn:aws:cloudformation:us-east-1:444277859488:stack/amplify-naturenewsp-naturenew-ddbc8/4dfd6620-9e1c-11ef-bd54-0ebd25ef6105",
+      "AmplifyAppId": "d62fjteoags9l"
+    }
+  }
+}
