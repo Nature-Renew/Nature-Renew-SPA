@@ -1,10 +1,11 @@
 <div class="info-container" id="about_section">
-    @for(infoBlurb of displayInfo; track infoBlurb.title){
-        <mat-expansion-panel class="faq py-0 my-0">
-            <mat-expansion-panel-header>
-              <mat-panel-title class="faq_title"> {{infoBlurb.title}} </mat-panel-title>
-            </mat-expansion-panel-header>
-            <p>{{infoBlurb.content}}.</p>
-          </mat-expansion-panel>
-    }
+  @for(infoBlurb of displayInfo; track infoBlurb.title){
+      <div class="faq text-white">
+          <div>
+            <h1 class="text mt-4 text-center "> {{infoBlurb.title}} </h1>
+          </div>
+          <p>{{infoBlurb.content}}.</p>
+      </div>
+  }
+
 </div>
