@@ -31,16 +31,19 @@
 
 @media only screen and (max-width: 1024px){
     .link-block a {
-        font-size: 3.3rem;
+        font-size: 1.9rem;
     }
 }
 
 
 @media only screen and (max-width: 768px) {
     .link-block{
-        display:flex;
         flex-direction: column;
-        gap: 4rem;
+        gap: 2rem;
+    }
+
+    .link-block a{
+        font-size: 1.4rem;
     }
 }
 
@@ -52,6 +55,6 @@
     }
 
     .link-block a{
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 }

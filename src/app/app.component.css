@@ -2,3 +2,7 @@ app-hero-component{
     margin-bottom: 1rem;
     z-index: 25;
 }
+/** anchor links - smooth scroll effect **/ 
+/* html {
+    scroll-behavior: smooth;
+} */

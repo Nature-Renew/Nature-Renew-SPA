@@ -1,3 +1,7 @@
+/* html {
+    scroll-behavior: smooth;
+} */
+
 .hero-section picture,
 .hero-section img {
     position: absolute;
